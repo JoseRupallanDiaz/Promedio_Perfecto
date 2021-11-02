@@ -1,5 +1,5 @@
 public class Maestro {
-    private double profe4;
+
     private String email;
     private String nombre;
     private String numero;
