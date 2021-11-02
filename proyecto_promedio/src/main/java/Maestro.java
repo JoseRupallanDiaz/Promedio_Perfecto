@@ -1,6 +1,6 @@
 public class Maestro {
 
-    private String email24;
+    private String email;
     private String nombre;
     private String numero;
 
