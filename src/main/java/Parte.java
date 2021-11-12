@@ -43,13 +43,13 @@ public class Parte implements Gestionar_notas {
     }
 
     @Override
-    public void ver_notas() {
+    public void verNotas() {
         System.out.println("| nombre\t\t\t| valor\t\t| porcentaje\t|");
         notas.stream().forEach(System.out::println);
     }
 
     @Override
-    public boolean ingresar_notas() {
+    public boolean ingresarNotas() {
         Scanner leer = new Scanner(System.in);
         System.out.print("ingrese el nombre de la evaluacion:");
         notas.add(new Nota(leer.nextLine()));
@@ -57,7 +57,7 @@ public class Parte implements Gestionar_notas {
     }
 
     @Override
-    public void modificar_notas(){
+    public void modificarNotas(){
         Scanner leer = new Scanner(System.in);
         int i=1;
         for(Nota n : notas){
@@ -86,7 +86,7 @@ public class Parte implements Gestionar_notas {
     }
 
     @Override
-    public double calcular_nota_necesaria() {
+    public double calcularNotaNecesaria() {
         double nota_necesaria = 0;
         if (calcular_porcentaje_t(0,this.notas)<100){
             nota_necesaria = (this.nota_ideal - calcular_promedio_actual(this.notas))/((100 - calcular_porcentaje_t(porcentaje, notas))*0.01);

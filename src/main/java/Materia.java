@@ -31,22 +31,22 @@ public class Materia implements Gestionar_notas {
     }
 
     @Override
-    public void ver_notas() {
+    public void verNotas() {
 
     }
 
     @Override
-    public boolean ingresar_notas() {
+    public boolean ingresarNotas() {
         return false;
     }
 
     @Override
-    public void modificar_notas() {
+    public void modificarNotas() {
 
     }
 
     @Override
-    public double calcular_nota_necesaria() {
+    public double calcularNotaNecesaria() {
         return 0;
     }
 }

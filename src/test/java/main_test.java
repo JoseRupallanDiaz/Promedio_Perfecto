@@ -59,7 +59,7 @@ public class main_test {
         Parte p1 = new Parte();
         p1.setNotas(notas);
         p1.setNota_ideal(6.0);
-        assertEquals(7.0,p1.calcular_nota_necesaria());
+        assertEquals(7.0,p1.calcularNotaNecesaria());
     }
     @Test
     public void carculer_nota_nece_test2(){
@@ -70,7 +70,7 @@ public class main_test {
         Parte p1 = new Parte();
         p1.setNotas(notas);
         p1.setNota_ideal(5.0);
-        assertEquals(5.0,p1.calcular_nota_necesaria());
+        assertEquals(5.0,p1.calcularNotaNecesaria());
     }
     @Test
     public void carculer_nota_nece_test3(){
@@ -81,7 +81,7 @@ public class main_test {
         Parte p1 = new Parte();
         p1.setNotas(notas);
         p1.setNota_ideal(4.5);
-        assertEquals(3.0,(double) Math.round(p1.calcular_nota_necesaria()*100.0/100.0));
+        assertEquals(3.0,(double) Math.round(p1.calcularNotaNecesaria()*100.0/100.0));
     }
 
     @Test
@@ -95,7 +95,7 @@ public class main_test {
     }
 
     @Test
-    public void calcular_promedio_actual_test2(){
+    void calcular_promedio_actual_test2(){
         ArrayList<Nota> notas = new ArrayList<Nota>();
         notas.add(new Nota("prueba1",25.0,4.0));
         notas.add(new Nota("prueba2",25.0,4.0));
