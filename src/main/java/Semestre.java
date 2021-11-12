@@ -43,17 +43,10 @@ public class Semestre implements Gestionar_notas {
 
     @Override
     public void verNotas() {
-
-    }
-
-
-    public boolean ingresarNotas() {
-        return false;
-    }
-
-
-    public void modificarNotas() {
-
+        ramos.forEach((ramo) -> {
+            System.out.println(ramo.getNombre());
+            ramo.verNotas();
+        });
     }
 
     @Override

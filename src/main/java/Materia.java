@@ -30,9 +30,16 @@ public class Materia implements Gestionar_notas {
         return maestro;
     }
 
+    public String getNombre(){
+        return nombre;
+    }
+
     @Override
     public void verNotas() {
-
+        System.out.println("Practico ("+this.practica.getPorcentaje()+"%)");
+        this.practica.verNotas();
+        System.out.println("Teorico ("+this.teorica.getPorcentaje()+"%)");
+        this.teorica.verNotas();
     }
 
     @Override
