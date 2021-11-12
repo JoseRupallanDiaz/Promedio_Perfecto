@@ -48,7 +48,7 @@ public class Parte implements Gestionar_notas {
         notas.stream().forEach(System.out::println);
     }
 
-    @Override
+
     public boolean ingresarNotas() {
         Scanner leer = new Scanner(System.in);
         System.out.print("ingrese el nombre de la evaluacion:");
@@ -56,7 +56,7 @@ public class Parte implements Gestionar_notas {
         return false;
     }
 
-    @Override
+
     public void modificarNotas(){
         Scanner leer = new Scanner(System.in);
         int i=1;

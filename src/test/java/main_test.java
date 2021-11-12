@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class main_test {
 
     @Test
-    public void hay_valores_test(){
+    public void hayValoresTest(){
         //este metodo es para determinar si no hay valores para calular en las notas
         ArrayList<Nota> notas = new ArrayList<Nota>();
         notas.add(new Nota("prueba1"));
@@ -17,7 +17,7 @@ public class main_test {
         assert(p1.no_hay_valores(notas));
     }
     @Test
-    public void hay_valores_test2(){
+    public void hayValoresTest2(){
         //este metodo es para determinar si no hay valores para calular en las notas
         ArrayList<Nota> notas = new ArrayList<Nota>();
         notas.add(new Nota("prueba1"));
@@ -28,7 +28,7 @@ public class main_test {
     }
 
     @Test
-    public void calcular_porcentaje_t_test(){
+    public void calcularPorcentajeTTest(){
         // este metodo esta hecho para ver si el porcentaje se puede sumar para no llegar a
         // mas de 100 sumandolas antes de hagregarlo a la nota del arreglo
         ArrayList<Nota> notas = new ArrayList<Nota>();
@@ -39,7 +39,7 @@ public class main_test {
         assertEquals(75.0,p1.calcular_porcentaje_t(0,notas));
     }
     @Test
-    public void calcular_porcentaje_t_test2(){
+    public void calcularPorcentajeTTest2(){
         // este metodo esta hecho para ver si el porcentaje se puede sumar para no llegar a
         // mas de 100 sumandolas antes de hagregarlo a la nota del arreglo
         ArrayList<Nota> notas = new ArrayList<Nota>();
@@ -51,7 +51,7 @@ public class main_test {
     }
 
     @Test
-    public void carculer_nota_nece_test(){
+    public void carculerNotaNeceTest(){
         ArrayList<Nota> notas = new ArrayList<Nota>();
         notas.add(new Nota("prueba1",25.0,7.0));
         notas.add(new Nota("prueba2",25.0,5.0));
@@ -62,7 +62,7 @@ public class main_test {
         assertEquals(7.0,p1.calcularNotaNecesaria());
     }
     @Test
-    public void carculer_nota_nece_test2(){
+    public void carculerNotaNeceTest2(){
         ArrayList<Nota> notas = new ArrayList<Nota>();
         notas.add(new Nota("prueba1",25.0,5.0));
         notas.add(new Nota("prueba2",25.0,5.0));
@@ -73,7 +73,7 @@ public class main_test {
         assertEquals(5.0,p1.calcularNotaNecesaria());
     }
     @Test
-    public void carculer_nota_nece_test3(){
+    public void carculerNotaNeceTest3(){
         ArrayList<Nota> notas = new ArrayList<Nota>();
         notas.add(new Nota("prueba1",30.0,6.0));
         notas.add(new Nota("prueba2",30.0,5.0));
@@ -85,7 +85,7 @@ public class main_test {
     }
 
     @Test
-    public void calcular_promedio_actual_test(){
+    public void calcularPromedioActualTest(){
         ArrayList<Nota> notas = new ArrayList<Nota>();
         notas.add(new Nota("prueba1",25.0,5.0));
         notas.add(new Nota("prueba2",25.0,5.0));
@@ -95,7 +95,7 @@ public class main_test {
     }
 
     @Test
-    void calcular_promedio_actual_test2(){
+    void calcularPromedioActualTest2(){
         ArrayList<Nota> notas = new ArrayList<Nota>();
         notas.add(new Nota("prueba1",25.0,4.0));
         notas.add(new Nota("prueba2",25.0,4.0));

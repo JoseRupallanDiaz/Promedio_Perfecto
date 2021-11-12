@@ -46,12 +46,12 @@ public class Semestre implements Gestionar_notas {
 
     }
 
-    @Override
+
     public boolean ingresarNotas() {
         return false;
     }
 
-    @Override
+
     public void modificarNotas() {
 
     }

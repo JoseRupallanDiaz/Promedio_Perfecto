@@ -36,16 +36,6 @@ public class Materia implements Gestionar_notas {
     }
 
     @Override
-    public boolean ingresarNotas() {
-        return false;
-    }
-
-    @Override
-    public void modificarNotas() {
-
-    }
-
-    @Override
     public double calcularNotaNecesaria() {
         return 0;
     }
