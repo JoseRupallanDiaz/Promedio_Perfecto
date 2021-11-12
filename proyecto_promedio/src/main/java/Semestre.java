@@ -9,7 +9,7 @@ public class Semestre implements Gestionar_notas {
     public Semestre() {
     }
 
-    public void agregar_ramos(){
+    public void agregarRamos(){
         Scanner input = new Scanner(System.in);
         int cantidad = 0;
         boolean flag;
