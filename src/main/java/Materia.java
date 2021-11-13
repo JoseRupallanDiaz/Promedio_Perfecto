@@ -53,7 +53,7 @@ public class Materia implements Gestionar_notas {
     public double calcularNotaNecesaria() {
         double nota_necesaria = 0;
         if(practica.estanTosdasLasNotas()&& !teorica.estanTosdasLasNotas()){
-            nota_necesaria =(nota_ideal-(practica.calcular_promedio_actual(practica.getNotas()) *practica.getPorcentaje()/100))*(Math.pow(teorica.getPorcentaje()/100,-1));
+            nota_necesaria = (nota_ideal-(practica.calcular_promedio_actual(practica.getNotas()) *practica.getPorcentaje()/100))*(Math.pow(teorica.getPorcentaje()/100,-1));
         }
         else if(teorica.estanTosdasLasNotas() && !practica.estanTosdasLasNotas()){
             nota_necesaria=(nota_ideal-(teorica.calcular_promedio_actual(teorica.getNotas()) *teorica.getPorcentaje()/100))*(Math.pow(practica.getPorcentaje()/100,-1));
