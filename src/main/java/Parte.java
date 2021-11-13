@@ -56,7 +56,6 @@ public class Parte implements Gestionar_notas {
         return false;
     }
 
-
     public void modificarNotas(){
         Scanner leer = new Scanner(System.in);
         int i=1;
@@ -122,6 +121,15 @@ public class Parte implements Gestionar_notas {
         return promedio_actual;
     }
 
+    public boolean estanTosdasLasNotas(){
+        boolean totalDeN = true;
+        for(Nota nota: notas){
+            if(nota.getValor()==0){
+                totalDeN = false;
+            }
+        }
+        return totalDeN;
+    }
 }
 
 
