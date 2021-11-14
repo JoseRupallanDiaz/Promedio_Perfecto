@@ -24,9 +24,18 @@ public class Materia implements Gestionar_notas {
         this.practica = practica;
     }
 
+    public Parte getTeorica(){
+        return this.teorica;
+    }
+
+    public Parte getPractica(){
+        return this.practica;
+    }
+
     public void setTeorica(Parte teorica) {
         this.teorica = teorica;
     }
+
     public void setNota_ideal(double nota_ideal) {
         this.nota_ideal = nota_ideal;
     }

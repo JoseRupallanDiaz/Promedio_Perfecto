@@ -49,11 +49,8 @@ public class Parte implements Gestionar_notas {
     }
 
 
-    public boolean ingresarNotas() {
-        Scanner leer = new Scanner(System.in);
-        System.out.print("ingrese el nombre de la evaluacion:");
-        notas.add(new Nota(leer.nextLine()));
-        return false;
+    public void ingresarNota(Nota nota) {
+        notas.add(nota);
     }
 
     public void modificarNotas(){
