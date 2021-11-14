@@ -27,7 +27,7 @@ public class parte_test {
     }
 
     @Test
-    public void calcularPorcentajeTTest(){
+    public void calcularPorcentajeTest(){
         // este metodo esta hecho para ver si el porcentaje se puede sumar para no llegar a
         // mas de 100 sumandolas antes de hagregarlo a la nota del arreglo
         ArrayList<Nota> notas = new ArrayList<Nota>();
@@ -38,7 +38,7 @@ public class parte_test {
         assertEquals(75.0,p1.calcular_porcentaje_t(0,notas));
     }
     @Test
-    public void calcularPorcentajeTTest2(){
+    public void calcularPorcentajeTest2(){
         // este metodo esta hecho para ver si el porcentaje se puede sumar para no llegar a
         // mas de 100 sumandolas antes de hagregarlo a la nota del arreglo
         ArrayList<Nota> notas = new ArrayList<Nota>();
