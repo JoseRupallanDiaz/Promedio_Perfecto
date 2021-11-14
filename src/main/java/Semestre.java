@@ -7,11 +7,17 @@ public class Semestre implements Gestionar_notas {
     private double nota_ideal;
 
     public Semestre() {
+        ramos = new ArrayList<Materia>();
     }
 
-    public ArrayList<Materia> getRamos() {
-        return ramos;
+    public Materia getRamo(int index){
+        return this.ramos.get(index);
     }
+
+    public void agregarRamo(Materia ramoNuevo){
+        this.ramos.add(ramoNuevo);
+    }
+
 
     public void setRamos(ArrayList<Materia> ramos) {
         this.ramos = ramos;
