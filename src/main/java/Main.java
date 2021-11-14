@@ -1,14 +1,18 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
         String nombre = "Diego";
         String materia = "Programacion";
         String evaluacion = "Prueba 1";
+
         Alumno diego = new Alumno(nombre);
         nuevoSemestre(diego);
         nuevaMateria(diego, materia, 0);
         nuevaNotaTeorica(diego, evaluacion, 0, 0);
-        diego.getSemestre(0).getRamo(0).getTeorica().modificarNotas();
+        diego.getSemestre(0).getRamos().get(0).getTeorica().modificarNotas();
         diego.getSemestre(0).verNotas();
 
     }
@@ -25,6 +29,6 @@ public class Main {
 
     public static void nuevaNotaTeorica(Alumno alumno, String nombreEvaluacion, int indiceSemestre, int indiceMateria){
         Nota nota = new Nota(nombreEvaluacion);
-        alumno.getSemestre(indiceSemestre).getRamo(indiceMateria).getTeorica().ingresarNota(nota);
+        alumno.getSemestre(indiceSemestre).getRamo(indiceSemestre).getTeorica().ingresarNota(nota);
     }
 }
