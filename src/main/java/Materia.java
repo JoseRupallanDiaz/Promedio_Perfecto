@@ -14,6 +14,12 @@ public class Materia implements Gestionar_notas {
         this.teorica = new Parte(100);
     }
 
+    public Materia(String nombre,Parte teorica,Parte practica) {
+        this.nombre = nombre;
+        this.practica =practica;
+        this.teorica = teorica;
+    }
+
     public void setPractica(Parte practica) {
         this.practica = practica;
     }
@@ -65,5 +71,16 @@ public class Materia implements Gestionar_notas {
             nota_necesaria = nota_ideal;
         }
         return nota_necesaria;
+    }
+
+    public boolean  todoCalificado(){
+        if(practica.estanTosdasLasNotas() && teorica.estanTosdasLasNotas()){
+            return true;
+        }
+        return false;
+    }
+
+    public double calcularPromedio(){
+        return ((practica.calcular_promedio_actual(practica.getNotas())+teorica.calcular_promedio_actual(teorica.getNotas()))/2);
     }
 }

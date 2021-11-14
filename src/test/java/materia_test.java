@@ -12,7 +12,6 @@ public class materia_test {
         notas2.add(new Nota("nota"));
         Parte teorica= new Parte(50);
         Parte practica= new Parte(50);
-
         teorica.setNotas(notas);
         practica.setNotas(notas2);
 
@@ -20,7 +19,6 @@ public class materia_test {
         mat.setNota_ideal(6.0);
         mat.setPractica(practica);
         mat.setTeorica(teorica);
-
         assertEquals(6.5,mat.calcularNotaNecesaria());
     }
 
@@ -32,7 +30,6 @@ public class materia_test {
         notas2.add(new Nota("nota"));
         Parte teorica= new Parte(50);
         Parte practica= new Parte(50);
-
         teorica.setNotas(notas2);
         practica.setNotas(notas);
 

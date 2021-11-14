@@ -122,13 +122,12 @@ public class Parte implements Gestionar_notas {
     }
 
     public boolean estanTosdasLasNotas(){
-        boolean totalDeN = true;
         for(Nota nota: notas){
-            if(nota.getValor()==0){
-                totalDeN = false;
+            if(nota.getValor()>0){
+                return  true;
             }
         }
-        return totalDeN;
+        return false;
     }
 }
 

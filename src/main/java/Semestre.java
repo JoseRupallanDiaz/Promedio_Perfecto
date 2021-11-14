@@ -4,9 +4,25 @@ import java.util.Scanner;
 public class Semestre implements Gestionar_notas {
 
     private ArrayList<Materia> ramos;
-    private Nota nota_ideal;
+    private double nota_ideal;
 
     public Semestre() {
+    }
+
+    public void setNota_ideal(double nota_ideal) {
+        this.nota_ideal = nota_ideal;
+    }
+
+    public ArrayList<Materia> getRamos() {
+        return ramos;
+    }
+
+    public void setRamos(ArrayList<Materia> ramos) {
+        this.ramos = ramos;
+    }
+
+    public double getNota_ideal() {
+        return nota_ideal;
     }
 
     public void agregar_ramos(){
@@ -33,14 +49,6 @@ public class Semestre implements Gestionar_notas {
         }
     }
 
-    public void setNota_ideal(Nota nota_ideal) {
-        this.nota_ideal = nota_ideal;
-    }
-
-    public Nota getNota_ideal() {
-        return nota_ideal;
-    }
-
     @Override
     public void verNotas() {
         ramos.forEach((ramo) -> {
@@ -51,6 +59,19 @@ public class Semestre implements Gestionar_notas {
 
     @Override
     public double calcularNotaNecesaria() {
-        return 0;
+        ArrayList<Materia> ramosListos = new ArrayList<Materia>();
+        double promedioListo = 0;
+        for (Materia ramo : ramos) {
+            if (ramo.todoCalificado()) {
+                ramosListos.add(ramo);
+                promedioListo = promedioListo + ramo.calcularPromedio();
+            }
+        }
+        if (ramosListos.size() == 0) {
+            return nota_ideal;
+        }
+        promedioListo= promedioListo/ramosListos.size();
+        double porsentajeListo = (double) (ramosListos.size())/ramos.size();
+        return (nota_ideal-(porsentajeListo*promedioListo))*(Math.pow(1-porsentajeListo,-1));
     }
 }
