@@ -3,7 +3,6 @@ public class Maestro {
     private String email;
     private String nombre;
     private String numero;
-    private String prueba;
 
     public Maestro(String nombre) {
         this.nombre = nombre;

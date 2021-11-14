@@ -27,6 +27,6 @@ public class Main {
 
     public static void nuevaNotaTeorica(Alumno alumno, String nombreEvaluacion, int indiceSemestre, int indiceMateria){
         Nota nota = new Nota(nombreEvaluacion);
-        alumno.getSemestre(indiceSemestre).getRamo(indiceSemestre).getTeorica().ingresarNota(nota);
+        alumno.getSemestre(indiceSemestre).getRamo(indiceMateria).getTeorica().ingresarNota(nota);
     }
 }

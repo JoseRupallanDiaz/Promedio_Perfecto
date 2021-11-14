@@ -44,7 +44,7 @@ public class Semestre implements Gestionar_notas {
                 System.err.println("El numero debe ser mayor a 0");
             }
         } while (flag);
-        for (int i =0; cantidad < i;i++){
+        for (int i =0; i < cantidad;i++){
             System.out.println("Ingrese el nombre de la materia");
             this.ramos.add(new Materia(input.nextLine()));
         }
