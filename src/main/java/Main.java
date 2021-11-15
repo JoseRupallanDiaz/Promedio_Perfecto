@@ -2,6 +2,10 @@ import ventanas.*;
 
 public class Main {
     public static void main(String[] args){
+
+        Principal ventana = new Principal();
+        ventana.setVisible(true);
+
         String nombre = "Diego";
         String materia = "Programacion";
         String evaluacion = "Prueba 1";
