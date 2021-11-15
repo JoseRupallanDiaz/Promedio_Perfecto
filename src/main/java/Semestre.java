@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Semestre implements Gestionar_notas {
+public class Semestre implements gestionarNotas {
 
     private ArrayList<Materia> ramos;
     private double nota_ideal;
@@ -76,7 +76,7 @@ public class Semestre implements Gestionar_notas {
                 promedioListo = promedioListo + ramo.calcularPromedio();
             }
         }
-        if (ramosListos.size() == 0) {
+        if(ramosListos.size()==0) {
             return nota_ideal;
         }
         promedioListo= promedioListo/ramosListos.size();

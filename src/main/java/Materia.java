@@ -1,9 +1,7 @@
-import java.util.ArrayList;
-
-public class Materia implements Gestionar_notas {
+public class Materia implements gestionarNotas {
 
     private String nombre;
-    private double nota_ideal;
+    private double notaIdeal;
     private Maestro maestro;
     private Parte teorica;
     private Parte practica;
@@ -36,12 +34,12 @@ public class Materia implements Gestionar_notas {
         this.teorica = teorica;
     }
 
-    public void setNota_ideal(double nota_ideal) {
-        this.nota_ideal = nota_ideal;
+    public void setNotaIdeal(double notaIdeal) {
+        this.notaIdeal = notaIdeal;
     }
 
-    public double getNota_ideal() {
-        return nota_ideal;
+    public double getNotaIdeal() {
+        return notaIdeal;
     }
 
     public void agregar_maestro(String nombre) {
@@ -68,16 +66,16 @@ public class Materia implements Gestionar_notas {
     public double calcularNotaNecesaria() {
         double nota_necesaria = 0;
         if(practica.estanTosdasLasNotas()&& !teorica.estanTosdasLasNotas()){
-            nota_necesaria = (nota_ideal-(practica.calcular_promedio_actual(practica.getNotas()) *practica.getPorcentaje()/100))*(Math.pow(teorica.getPorcentaje()/100,-1));
+            nota_necesaria = (notaIdeal -(practica.calcularPromedioActual(practica.getNotas()) *practica.getPorcentaje()/100))*(Math.pow(teorica.getPorcentaje()/100,-1));
         }
         else if(teorica.estanTosdasLasNotas() && !practica.estanTosdasLasNotas()){
-            nota_necesaria=(nota_ideal-(teorica.calcular_promedio_actual(teorica.getNotas()) *teorica.getPorcentaje()/100))*(Math.pow(practica.getPorcentaje()/100,-1));
+            nota_necesaria=(notaIdeal -(teorica.calcularPromedioActual(teorica.getNotas()) *teorica.getPorcentaje()/100))*(Math.pow(practica.getPorcentaje()/100,-1));
         }
         else if(teorica.estanTosdasLasNotas() && practica.estanTosdasLasNotas()){
             nota_necesaria = 0;
         }
         else {
-            nota_necesaria = nota_ideal;
+            nota_necesaria = notaIdeal;
         }
         return nota_necesaria;
     }
@@ -90,6 +88,6 @@ public class Materia implements Gestionar_notas {
     }
 
     public double calcularPromedio(){
-        return ((practica.calcular_promedio_actual(practica.getNotas())+teorica.calcular_promedio_actual(teorica.getNotas()))/2);
+        return ((practica.calcularPromedioActual(practica.getNotas())+teorica.calcularPromedioActual(teorica.getNotas()))/2);
     }
 }

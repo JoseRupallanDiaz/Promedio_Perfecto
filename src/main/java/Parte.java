@@ -1,15 +1,15 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Parte implements Gestionar_notas {
+public class Parte implements gestionarNotas {
 
     private ArrayList<Nota> notas;
     private double porcentaje;
-    private double nota_ideal;
+    private double notaIdeal;
 
     public Parte() {
         this.porcentaje = 0;
-        this.notas = new ArrayList<Nota>();
+        this.notas = new ArrayList();
     }
 
     public Parte(double porcentaje){
@@ -34,17 +34,17 @@ public class Parte implements Gestionar_notas {
         this.porcentaje = porcentaje;
     }
 
-    public double getNota_ideal() {
-        return nota_ideal;
+    public double getNotaIdeal() {
+        return notaIdeal;
     }
 
-    public void setNota_ideal(double nota_ideal) {
-        this.nota_ideal = nota_ideal;
+    public void setNotaIdeal(double notaIdeal) {
+        this.notaIdeal = notaIdeal;
     }
 
     @Override
     public void verNotas() {
-        System.out.println("| nombre\t\t\t| valor\t\t| porcentaje\t|");
+        System.out.println("| nombre\t\t\t| valor\t\t| percentage\t|");
         notas.stream().forEach(System.out::println);
     }
 
@@ -74,7 +74,7 @@ public class Parte implements Gestionar_notas {
         if(leer.nextLine().equalsIgnoreCase("Y")){
             System.out.print("Ingrese el porcentaje:");
             double porcen =leer.nextDouble();
-            if (calcular_porcentaje_t(porcen,notas)<=100) {
+            if (calcularPorcentajeT(porcen,notas)<=100) {
                 notas.get(opcion).setPorcentaje(porcen);
             }
             else System.out.println("el porcentaje de la nota no se a modificado por ser mas de 100%");
@@ -83,15 +83,15 @@ public class Parte implements Gestionar_notas {
 
     @Override
     public double calcularNotaNecesaria() {
-        double nota_necesaria = 0;
-        if (calcular_porcentaje_t(0,this.notas)<100){
-            nota_necesaria = (this.nota_ideal - calcular_promedio_actual(this.notas))/((100 - calcular_porcentaje_t(porcentaje, notas))*0.01);
-            return nota_necesaria;
+        double notaNecesaria = 0;
+        if (calcularPorcentajeT(0,this.notas)<100){
+            notaNecesaria = (this.notaIdeal - calcularPromedioActual(this.notas))/((100 - calcularPorcentajeT(porcentaje, notas))*0.01);
+            return notaNecesaria;
         }
-    return nota_necesaria;
+    return notaNecesaria;
     }
 
-    public static boolean no_hay_valores(ArrayList<Nota> notas){
+    public static boolean noHayValores(ArrayList<Nota> notas){
         double sum_nota=0;
         for(Nota n: notas ) {
             sum_nota+=n.getValor();
@@ -102,20 +102,20 @@ public class Parte implements Gestionar_notas {
         return false;
     }
 
-    public static double calcular_porcentaje_t(double porcentaje , ArrayList<Nota> notas){
-        double porcentaje_t=porcentaje;
+    public static double calcularPorcentajeT(double porcentaje , ArrayList<Nota> notas){
+        double porcentajeT=porcentaje;
         for(Nota n: notas ) {
-            porcentaje_t+=n.getPorcentaje();
+            porcentajeT+=n.getPorcentaje();
         }
-       return porcentaje_t;
+       return porcentajeT;
     }
 
-    public double calcular_promedio_actual(ArrayList<Nota> notas){
-        double promedio_actual = 0;
+    public double calcularPromedioActual(ArrayList<Nota> notas){
+        double promedioActual = 0;
         for(Nota n: notas){
-            promedio_actual += (n.getValor()*n.getPorcentaje()/100);
+            promedioActual += (n.getValor()*n.getPorcentaje()/100);
         }
-        return promedio_actual;
+        return promedioActual;
     }
 
     public boolean estanTosdasLasNotas(){
