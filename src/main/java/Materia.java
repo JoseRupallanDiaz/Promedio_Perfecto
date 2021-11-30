@@ -2,7 +2,6 @@ public class Materia implements gestionarNotas {
 
     private String nombre;
     private double notaIdeal;
-    private Maestro maestro;
     private Parte teorica;
     private Parte practica;
 
@@ -40,14 +39,6 @@ public class Materia implements gestionarNotas {
 
     public double getNotaIdeal() {
         return notaIdeal;
-    }
-
-    public void agregar_maestro(String nombre) {
-        this.maestro = new Maestro(nombre);
-    }
-
-    public Maestro getMaestro() {
-        return maestro;
     }
 
     public String getNombre() {
@@ -88,6 +79,12 @@ public class Materia implements gestionarNotas {
     }
 
     public double calcularPromedio(){
+        // double promedio= 0;
+        // double promedioPrac = practica.calcularPromedioActual(practica.getNotas());
+        // double promedioTeor = teorica.calcularPromedioActual(teorica.getNotas());
+        // promedio = (promedioPrac+promedioTeor)/2;
+        // return promedio;
+
         return ((practica.calcularPromedioActual(practica.getNotas())+teorica.calcularPromedioActual(teorica.getNotas()))/2);
     }
 }

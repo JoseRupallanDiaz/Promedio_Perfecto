@@ -13,7 +13,7 @@ class parteTest {
         notas.add(new Nota("prueba2"));
         notas.add(new Nota("prueba3"));
         Parte p1 = new Parte();
-        assert(p1.noHayValores(notas));
+        assertEquals(true,p1.noHayValores(notas));
     }
     @Test
     void hayValoresTest2(){
@@ -23,7 +23,7 @@ class parteTest {
         notas.add(new Nota("prueba2"));
         notas.add(new Nota("prueba3",50.0,5.5));
         Parte p1 = new Parte();
-        assert(!p1.noHayValores(notas));
+        assertEquals(true,!p1.noHayValores(notas));
     }
 
     @Test
