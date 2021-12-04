@@ -79,12 +79,8 @@ public class Materia implements gestionarNotas {
     }
 
     public double calcularPromedio(){
-        // double promedio= 0;
-        // double promedioPrac = practica.calcularPromedioActual(practica.getNotas());
-        // double promedioTeor = teorica.calcularPromedioActual(teorica.getNotas());
-        // promedio = (promedioPrac+promedioTeor)/2;
-        // return promedio;
-
-        return ((practica.calcularPromedioActual(practica.getNotas())+teorica.calcularPromedioActual(teorica.getNotas()))/2);
+        double promedioPrac = practica.calcularPromedioActual(practica.getNotas());
+        double promedioTeor = teorica.calcularPromedioActual(teorica.getNotas());
+        return (promedioPrac+promedioTeor)/2;
     }
 }
