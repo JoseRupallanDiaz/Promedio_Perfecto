@@ -1,10 +1,13 @@
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
+import java.io.IOException;
 
 public class Main {
-
-    public static void main(String[] args) throws SQLException {
+        
+    public static void main(String[] args) throws IOException {
+        Log log;
+        log = new Log("logs.lck");
 
         //Inicio DB e input
         Database database = new Database();
@@ -15,6 +18,11 @@ public class Main {
         //nuevaNotaTeorica(diego, evaluacion, 0, 0);
         //diego.getSemestre(0).getRamos().get(0).getTeorica().modificarNotas();
         //diego.getSemestre(0).verNotas();
+        String nombre = "Diego";
+        log.addLine("ingreso "+nombre);
+        String materia = "Programacion";
+        String evaluacion = "Prueba 1";
+        
 
     }
 
@@ -64,4 +72,3 @@ public class Main {
         } while (menu1);
     }
 }
-
