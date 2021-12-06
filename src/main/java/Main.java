@@ -1,36 +1,67 @@
-import ventanas.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args){
 
-        Principal ventana = new Principal();
-        ventana.setVisible(true);
+    public static void main(String[] args) throws SQLException {
 
-        String nombre = "Diego";
-        String materia = "Programacion";
-        String evaluacion = "Prueba 1";
-
-        Alumno diego = new Alumno(nombre);
-        nuevoSemestre(diego);
-        nuevaMateria(diego, materia, 0);
-        nuevaNotaTeorica(diego, evaluacion, 0, 0);
-        diego.getSemestre(0).getRamos().get(0).getTeorica().modificarNotas();
-        diego.getSemestre(0).verNotas();
+        //Inicio DB e input
+        Database database = new Database();
+        Scanner input = new Scanner(System.in);
+        //Menu
+        //nuevoSemestre(diego);
+        //nuevaMateria(diego, materia, 0);
+        //nuevaNotaTeorica(diego, evaluacion, 0, 0);
+        //diego.getSemestre(0).getRamos().get(0).getTeorica().modificarNotas();
+        //diego.getSemestre(0).verNotas();
 
     }
 
-    public static void nuevoSemestre(Alumno alumno){
+    public static void nuevoSemestre(Alumno alumno, Database db){
         Semestre nuevoSemestre = new Semestre();
         alumno.addSemestre(nuevoSemestre);
     }
 
-    public static void nuevaMateria(Alumno alumno, String nombreMateria, int indiceSemestre){
+    public static void nuevaMateria(Alumno alumno, String nombreMateria, int indiceSemestre, Database db){
         Materia ramo = new Materia(nombreMateria);
         alumno.getSemestre(indiceSemestre).agregarRamo(ramo);
     }
 
-    public static void nuevaNotaTeorica(Alumno alumno, String nombreEvaluacion, int indiceSemestre, int indiceMateria){
+    public static void nuevaNotaTeorica(Alumno alumno, String nombreEvaluacion, int indiceSemestre, int indiceMateria, Database db){
         Nota nota = new Nota(nombreEvaluacion);
         alumno.getSemestre(indiceSemestre).getRamo(indiceMateria).getTeorica().ingresarNota(nota);
     }
+
+    public static void nuevoAlumno(String nombre, Database db) throws SQLException {
+        Alumno alumno = new Alumno(nombre);
+        db.add("alumno","nombre",nombre);
+    }
+
+    public static void ListaAlumnos(Database database) throws SQLException {
+        ResultSet usuarios = database.getTable("alumno");
+        System.out.println("ID\tNombre\t\tPGA");
+        while (usuarios.next()){
+            System.out.print(usuarios.getString("id")+"\t");
+            System.out.print(usuarios.getString("nombre")+"\t\t");
+            System.out.print(usuarios.getString("pga"));
+            System.out.println("");
+        }
+    }
+
+    public static void Menu1(Scanner input){
+        boolean menu1;
+        do {
+            menu1 = true;
+            System.out.println("Seleccione una opción:");
+            System.out.println("1. Iniciar con ID");
+            System.out.println("2. Lista de Alumnos");
+            System.out.println("3. Crear Alumnos");
+            int opcion = input.nextInt();
+            if (opcion<=3&&opcion>0){
+                menu1 = false;
+            }
+        } while (menu1);
+    }
 }
+
