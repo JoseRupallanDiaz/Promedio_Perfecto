@@ -1,14 +1,16 @@
-import ventanas.*;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args){
 
-        Principal ventana = new Principal();
-        ventana.setVisible(true);
+    public static void main(String[] args) throws IOException {
+        Log log;
+        log = new Log("logs.lck");
 
         String nombre = "Diego";
+        log.addLine("ingreso "+nombre);
         String materia = "Programacion";
         String evaluacion = "Prueba 1";
+
 
         Alumno diego = new Alumno(nombre);
         nuevoSemestre(diego);
