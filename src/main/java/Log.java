@@ -13,8 +13,8 @@ public class Log {
     private BufferedWriter buffered;
     private String ruta;
 
-    public Log(String ruta) throws IOException {
-        this.ruta = ruta;
+    public Log() throws IOException {
+        this.ruta = "logs.lck";
         this.open(true);
     }
 

@@ -7,7 +7,7 @@ public class Main {
         
     public static void main(String[] args) throws IOException {
         Log log;
-        log = new Log("logs.lck");
+        log = new Log();
 
         //Inicio DB e input
         Database database = new Database();
