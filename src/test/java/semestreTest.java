@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class Semestre_test {
+class semestreTest {
 
     @Test
-    public void calcularNotaNecesariaTest(){
+    void calcularNotaNecesariaTest(){
         Semestre sem = new Semestre();
         ArrayList<Nota> notas = new ArrayList<Nota>();
         notas.add(new Nota("",100,6.0));
@@ -30,7 +30,7 @@ public class Semestre_test {
     }
 
     @Test
-    public void calcularNotaNecesariaTest2(){
+    void calcularNotaNecesariaTest2(){
         Semestre sem = new Semestre();
         ArrayList<Nota> notas = new ArrayList<Nota>();
         notas.add(new Nota("",100,6.0));
@@ -53,7 +53,7 @@ public class Semestre_test {
     }
 
     @Test
-    public void calcularNotaNecesariaTest3(){
+    void calcularNotaNecesariaTest3(){
         Semestre sem = new Semestre();
         ArrayList<Nota> notas = new ArrayList<Nota>();
         notas.add(new Nota("",100,7.0));
