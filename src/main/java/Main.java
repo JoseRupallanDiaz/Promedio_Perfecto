@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -5,7 +6,7 @@ import java.io.IOException;
 
 public class Main {
         
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, SQLException {
         Log log;
         log = new Log();
 
@@ -13,6 +14,7 @@ public class Main {
         Database database = new Database();
         Scanner input = new Scanner(System.in);
         //Menu
+        Menu1(input);
         //nuevoSemestre(diego);
         //nuevaMateria(diego, materia, 0);
         //nuevaNotaTeorica(diego, evaluacion, 0, 0);
@@ -65,10 +67,10 @@ public class Main {
             System.out.println("1. Iniciar con ID");
             System.out.println("2. Lista de Alumnos");
             System.out.println("3. Crear Alumnos");
+            System.out.println("4. Salir");
             int opcion = input.nextInt();
-            if (opcion<=3&&opcion>0){
-                menu1 = false;
-            }
+
         } while (menu1);
     }
+
 }
