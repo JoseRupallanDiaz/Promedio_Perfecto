@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         Log log;
-        log = new Log("logs.lck");
+        log = new Log();
 
         String nombre = "Diego";
         log.addLine("ingreso "+nombre);
