@@ -25,7 +25,12 @@ public class Database {
     }
 
     public ResultSet getById(String tabla, int id) throws SQLException {
-        ResultSet resultset = statement.executeQuery("select * from "+tabla+" where id="+id);
+        ResultSet resultset = statement.executeQuery("SELECT * FROM "+tabla+" WHERE ID = "+id);
+        System.out.println(resultset.getString("nombre"));
         return resultset;
+    }
+
+    public void addSemestre(Alumno alumno) throws SQLException {
+        statement.execute("INSERT INTO semestre SET idAlumno = (SELECT id FROM alumno WHERE nombre = '"+alumno.getNombre()+"')");
     }
 }
