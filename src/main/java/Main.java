@@ -13,6 +13,7 @@ public class Main {
         //Inicio DB e input
         Database database = new Database();
         Scanner input = new Scanner(System.in);
+
         //Menu
         //Menu1(input, database);
         //nuevoSemestre(diego);

@@ -29,7 +29,7 @@ public class Log {
 
     public void addLine(String line) throws IOException {
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         String formatoFecha = sdf.format(new Date());
         this.open(true);
         this.buffered.write("[" + formatoFecha + "] " + line + "\n");

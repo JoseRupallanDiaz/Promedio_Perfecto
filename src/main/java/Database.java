@@ -1,6 +1,4 @@
-import com.mysql.cj.protocol.Resultset;
 
-import javax.swing.plaf.nimbus.State;
 import java.sql.*;
 
 public class Database {

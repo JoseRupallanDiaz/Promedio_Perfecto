@@ -1,7 +1,10 @@
 
 /**
- *
- *
+ * @package main/java
+ */
+
+/**
+ * este objeto esta hecha para ser usada como compocicion para otros objetos en el programa
  */
 public class Nota {
 
@@ -42,30 +45,58 @@ public class Nota {
         this.valor = valor;
     }
 
+    /**
+     * retorna el nombre del objeto
+     * @return nombre
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     * modijica el nombre del objeto
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     * retorna el porsentaje prara ser utilizado en su emvocador
+     * @return porcentaje
+     */
     public double getPorcentaje() {
         return porcentaje;
     }
 
+    /**
+     * recibe un double para intercambiar por el prosentaje
+     * @param porcentaje
+     */
     public void setPorcentaje(double porcentaje) {
         this.porcentaje = porcentaje;
     }
 
+    /**
+     * reorna el valor para ser utilizado
+     * @return valor
+     */
     public double getValor() {
         return valor;
     }
 
+    /**
+     * recibe un double para intercambiar por el valor
+     * @param valor
+     */
     public void setValor(double valor) {
         this.valor = valor;
     }
 
+    /**
+     * guarda todos los atributos de forma estetica para devolverlo al impromir el objeto
+     * @return toSting nombre , valor , porcentaje
+     */
     @Override
     public String toString() {
         return "| "+nombre+"\t\t\t | "+valor+"\t\t | "+porcentaje+"%\t|";
