@@ -1,3 +1,5 @@
+package com.promedioperfecto;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

@@ -1,4 +1,5 @@
-import java.awt.*;
+package com.promedioperfecto;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -22,7 +23,7 @@ public class Main {
         //diego.getSemestre(0).getRamos().get(0).getTeorica().modificarNotas();
         //diego.getSemestre(0).verNotas();
         String nombre = "Diego";
-        log.addLine("ingreso Alumno: "+nombre);
+        log.addLine("ingreso PromedioPerfecto.Alumno: "+nombre);
         nuevoAlumno(nombre,database,log);
     }
 
@@ -44,7 +45,7 @@ public class Main {
 
     public static void nuevoAlumno(String nombre, Database db, Log log) throws SQLException, IOException {
         db.add("alumno","nombre",nombre);
-        log.addLine("Alumno "+nombre+"ingresado a la base de datos");
+        log.addLine("PromedioPerfecto.Alumno "+nombre+"ingresado a la base de datos");
     }
 
     public static Alumno seleccionarAlumno(int id, Database db) throws SQLException {

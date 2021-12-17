@@ -1,3 +1,5 @@
+package com.promedioperfecto;
+
 public class Materia implements gestionarNotas {
 
     private String nombre;

@@ -1,4 +1,8 @@
 
+import com.promedioperfecto.Materia;
+import com.promedioperfecto.Nota;
+import com.promedioperfecto.Parte;
+import com.promedioperfecto.Semestre;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;

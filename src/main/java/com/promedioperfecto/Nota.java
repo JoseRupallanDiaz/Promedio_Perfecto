@@ -1,10 +1,10 @@
-
+package com.promedioperfecto;
 /**
  * @package main/java
  */
 
 /**
- * este objeto esta hecha para ser usada como compocicion para otros objetos en el programa
+ * Clase encargada de almacenar valores correspondientes a una Nota
  */
 public class Nota {
 
@@ -14,7 +14,7 @@ public class Nota {
 
     /**
      * Constructor que recibe nombre de la evaluación, valor de la nota y porcentaje por default 0.
-     * @param nombre nombre de la evaluación Nota.
+     * @param nombre nombre de la evaluación PromedioPerfecto.Nota.
      */
     public Nota(String nombre){
         this.porcentaje = 0;
@@ -35,7 +35,7 @@ public class Nota {
 
     /**
      * Constructor que recibe el nombre, el porcentaje y el valor ded la evaluación.
-     * @param nombre nombre de la evaluación Nota.
+     * @param nombre nombre de la evaluación PromedioPerfecto.Nota.
      * @param porcentaje valor porcentual de la evaluación.
      * @param valor valor numérico de la evaluación.
      */
@@ -46,7 +46,7 @@ public class Nota {
     }
 
     /**
-     * retorna el nombre del objeto
+     * retorna el nombre de la evaluación.
      * @return nombre
      */
     public String getNombre() {
@@ -54,15 +54,15 @@ public class Nota {
     }
 
     /**
-     * modijica el nombre del objeto
-     * @param nombre
+     * modifica el nombre de la evaluación.
+     * @param nombre nombre nuevo del objeto.
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     * retorna el porsentaje prara ser utilizado en su emvocador
+     * retorna el porcentaje de la evaluación.
      * @return porcentaje
      */
     public double getPorcentaje() {
@@ -70,15 +70,15 @@ public class Nota {
     }
 
     /**
-     * recibe un double para intercambiar por el prosentaje
-     * @param porcentaje
+     * modifica el valor del porcentaje de la evaluación.
+     * @param porcentaje porcentaje nuevo del objeto.
      */
     public void setPorcentaje(double porcentaje) {
         this.porcentaje = porcentaje;
     }
 
     /**
-     * reorna el valor para ser utilizado
+     * retorna el valor de la evaluación.
      * @return valor
      */
     public double getValor() {
@@ -86,16 +86,16 @@ public class Nota {
     }
 
     /**
-     * recibe un double para intercambiar por el valor
-     * @param valor
+     * modfica el valor de la evaluación.
+     * @param valor valor nuevo del objeto.
      */
     public void setValor(double valor) {
         this.valor = valor;
     }
 
     /**
-     * guarda todos los atributos de forma estetica para devolverlo al impromir el objeto
-     * @return toSting nombre , valor , porcentaje
+     * retorna un String ordenado con los valores de la evaluación.
+     * @return toSting nombre, valor, porcentaje.
      */
     @Override
     public String toString() {
